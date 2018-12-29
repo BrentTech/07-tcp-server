@@ -1,13 +1,14 @@
 ![CF](http://i.imgur.com/7v5ASc8.png) LAB
 =================================================
 
-## Project Name
+## 07 TCP Server
 
-### Author: Student/Group Name
+### Author: Brent Woodward
 
 ### Links and Resources
-* [repo](http://xyz.com)
-* [travis](http://xyz.com)
+[![Build Status](https://www.travis-ci.com/BrentTech/07-tcp-server.svg?branch=master)](https://www.travis-ci.com/BrentTech/07-tcp-server)
+* [repo](https://github.com/BrentTech/07-tcp-server)
+* [travis](https://www.travis-ci.com/BrentTech/07-tcp-server)
 * [back-end](http://xyz.com)
 * [front-end](http://xyz.com)
 
@@ -24,7 +25,6 @@ Usage Notes or examples
 ### Setup
 #### `.env` requirements
 * `PORT` - Port Number
-* `MONGODB_URI` - URL to the running mongo instance/db
 
 #### Running the app
 * `npm start`
