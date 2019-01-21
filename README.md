@@ -4,39 +4,49 @@
 ## 07 TCP Server
 
 ### Author: Brent Woodward
+#### Contributors: Becca & Heather
 
 ### Links and Resources
 [![Build Status](https://www.travis-ci.com/BrentTech/07-tcp-server.svg?branch=master)](https://www.travis-ci.com/BrentTech/07-tcp-server)
 * [repo](https://github.com/BrentTech/07-tcp-server)
 * [travis](https://www.travis-ci.com/BrentTech/07-tcp-server)
-* [back-end](http://xyz.com)
-* [front-end](http://xyz.com)
 
 ### Modules
-#### `modulename.js`
+#### `events.js`
+Establishes new events instance.
+
+#### `actions.js`
 ##### Exported Values and Methods
+###### `@all -> callback function`
+Writes message to all sockets
+###### `@nick -> callback function`
+Assigns given nickname to socket connection
+###### `@quit -> callback function`
+Breaks socket connections
+###### `@list -> callback function`
+Lists all active connections
+###### `@dm -> callback function`
+Writes message to specific socket
 
-###### `foo(thing) -> string`
-Usage Notes or examples
 
-###### `bar(array) -> array`
-Usage Notes or examples
+#### `logger.js`
+##### Exported Values and Methods
+###### `parseBuffer(buffer, userId, socketPool) -> event.emit`
+
+###### `dispatchCommand(buffer, userId, socketPool) -> function`
+
+
 
 ### Setup
 #### `.env` requirements
-* `PORT` - Port Number
+* `PORT` - 3001 or setup by env
 
 #### Running the app
-* `npm start`
-* Endpoint: `/foo/bar/`
-  * Returns a JSON object with abc in it.
-* Endpoint: `/bing/zing/`
-  * Returns a JSON object with xyz in it.
+* `nodemon chatroom.js`
+* Connections: `nc localhost 3001`
+  * Connects terminal to chat server. Multiple connects are able to communcate with each other.
 
 #### Tests
 * How do you run tests?
 * What assertions were made?
 * What assertions need to be / should be made?
-
-#### UML
-Link to an image of the UML for your application and response to events
