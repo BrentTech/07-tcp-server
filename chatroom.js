@@ -2,23 +2,28 @@
 
 const net = require('net');
 
+const uuid = require('uuid/v4');
+
 const port = process.env.PORT || 3001;
 const server = net.createServer();
-const socketPool = require('./lib/socket-pool.js');
-const actions = require('require-directory')(module, './actions');
+const socketPool = {};
+const actions = {};
 
-
+// Module files
 const app = require('./app.js');
 const logger = require('./lib/logger.js');
 const events = require('./lib/events.js');
-const User = require('./models/user.js');
 
 
-// Socket Pool Module
 server.on('connection', (socket) => {
-  let user = new User(socket);
-  socketPool[user.id] = user;
-  socket.on('data', (buffer) => events.emit('emit-socket', buffer, user.id, socketPool));
+  let id = uuid();
+  socketPool[id] = {
+    id:id,
+    nickname: `User-${id}`,
+    socket: socket,
+  };
+  socket.on('data', (buffer) => events.emit('emitting-socket', buffer, id, socketPool));
+  console.log('Someone has connected');
 });
 
 server.listen(port, () => {

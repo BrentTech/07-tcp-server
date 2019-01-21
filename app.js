@@ -1,16 +1,17 @@
 'use strict';
 
 const events = require('./lib/events.js');
+const logger = require('./lib/logger.js');
 
 
-let dispatch = (buffer, userId, socketPool) => {
+events.on('emitting-socket', dispatchAction);
+
+function dispatchAction(buffer, userId, socketPool) {
   parse(buffer, userId, socketPool);
-};
+}
 
-let parse = (buffer, userId, socketPool) => {
-  events.emit('parsed-buffer', buffer, userId, socketPool);
-};
+function parse(buffer, userId, socketPool) {
+  events.emit('parse-buffer', buffer, userId, socketPool);
+}
 
-events.on('emit-socket', dispatch);
-
-module.exports = {parse, dispatch};
+module.exports = {parse, dispatchAction};
