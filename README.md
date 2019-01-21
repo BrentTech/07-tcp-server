@@ -4,6 +4,7 @@
 ## 07 TCP Server
 
 ### Author: Brent Woodward
+#### Contributors: Becca Lee
 
 ### Links and Resources
 [![Build Status](https://www.travis-ci.com/BrentTech/07-tcp-server.svg?branch=master)](https://www.travis-ci.com/BrentTech/07-tcp-server)
