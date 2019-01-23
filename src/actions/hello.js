@@ -10,4 +10,4 @@ let sayHello = (data, userId) => {
 
 events.on('@hello', sayHello);
 
-module.exports = sayHello;
+module.exports = {};
